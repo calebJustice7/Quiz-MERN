@@ -1,0 +1,23 @@
+.svg{
+    display: block;
+    margin: 20px auto;
+    max-width: 170px;
+    margin-top: 0px;
+    margin-right: 45%;
+}
+  
+.svg-circle-bg {
+    fill: none;
+}
+  
+.svg-circle {
+    fill: none;
+}
+
+.svg-circle-text {
+    font-size: 1.1rem;
+    text-anchor: middle;
+    fill: #00aaf2;
+    font-weight: bold;
+    margin-top: 20px;
+}

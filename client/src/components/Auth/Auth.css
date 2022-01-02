@@ -1,0 +1,71 @@
+.auth-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+}
+
+.auth-wrapper .left {
+    background-color: rgb(98, 228, 174);
+    width: 65%;
+    height: 100vh;
+}
+
+.auth-wrapper .right { 
+    padding: 100px;
+    text-align: center;
+    width: calc(40% - 200px);
+}
+
+.auth-wrapper .right .header {
+    margin: 100px 0;
+    font-size: 3em;
+    letter-spacing: 1px;
+}
+
+.auth-wrapper .right .sub-header {
+    font-size: 1.5em;
+    color: rgb(148, 148, 148);
+}
+
+.auth-wrapper .form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.auth-wrapper .input {
+    width: 20vw;
+}
+
+.auth-wrapper .sign-in-wrapper .input-wrapper {
+    text-align: left;
+    /* width: fit-content; */
+    margin: 20px auto;
+}
+
+.auth-wrapper .sign-in-wrapper .input-wrapper:first-child {
+    margin-top: 140px;
+}
+
+.auth-wrapper .btn {
+    margin-top: 40px;
+    font-size: 1.1em !important;
+    width: 100% !important;
+}
+
+.auth-wrapper .new {
+    margin-top: 50px;
+    cursor: pointer;
+    color: rgb(148, 148, 148);
+}
+
+.auth-wrapper .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-wrapper .left img {
+    width: 60%;
+    height: auto;
+}

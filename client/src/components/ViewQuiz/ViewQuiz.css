@@ -1,0 +1,220 @@
+.view-quiz {
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 1%;
+    padding-top: 50px;
+    height: calc(98% - 60px);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.view-quiz .not-auth {
+    width: 100%;
+    text-align: center;
+    margin-top: 27%;
+    font-size: 2.7em;
+}
+
+.view-quiz .content {
+    width: 100%;
+    
+}
+
+.view-quiz .header {
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    font-weight: 350;
+    border-bottom: 4px solid #dadfea;
+    padding: 15px 0;
+}
+
+.view-quiz .body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-quiz .body .left {
+    color: black;
+    background-color: white;
+    flex: .5;
+    position: relative;
+}
+
+.view-quiz .body .left .description {
+    margin: 30px 0 26px 20px;
+} 
+
+.view-quiz .body .left .comments {
+    height: 600px;
+    overflow-y: scroll;
+    background-color: #d9e1f3;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+.view-quiz .body .left .comments::-webkit-scrollbar {
+    display: none;
+}
+
+.view-quiz .body .left .comments .comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 30px;
+    padding: 6px;
+    margin: 45px 0; 
+    width: fit-content;
+    position: relative;
+    margin-left: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.view-quiz .body .left .comments .sent-from-creator {
+    margin-left: auto;
+    margin-right: 60px;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+}
+
+.view-quiz .body .left .comments .sent-from-creator div:last-child {
+    right: -100px;
+}
+
+.view-quiz .body .left .comments .comment div:last-child {
+    position: absolute;
+    bottom: -18px;
+    width: 150px;
+}
+
+.view-quiz .body .left .comments .comment img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -50px;
+}
+
+.view-quiz .body .left .comments .sent-from-creator .sent-from-img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 190px
+}
+
+.view-quiz .body .left .comments .input-field {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #cbd1df;
+}
+
+.view-quiz .body .left .comments .input-field input {
+    width: 80%;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.view-quiz .body .left .comments .input-field button {
+    outline: none;
+    border: none;
+    font-size: 1em;
+    border-radius: 25px;
+    padding: 15px;
+    width: 14%;
+    color: white;
+    background-color: #30D158;
+    cursor: pointer;
+}
+
+.view-quiz .body .right {
+    flex: .5;
+    background-color: #f1e9e9;
+    color :black;
+}
+
+.view-quiz .body .right .questions-num {
+    background-color :white;
+    width: 100%;
+    font-size: 1.8em;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.view-quiz .body .right .questions-wrapper {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 600px;
+    position: relative;
+}
+
+.view-quiz .body .right .no-scroll {
+    overflow: hidden !important;
+}
+
+.view-quiz .body .right .questions-wrapper .question {
+    margin: 15px 0;
+    padding: 13px;
+    background-color :white;
+    border-left: 20px solid #00aaf1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.view-quiz .body .right .hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.view-quiz .body .right .hidden div {
+    margin-top: 40%;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.view-quiz .footer {
+    width: 100%;
+    background-color: rgb(235, 225, 225);
+    color: black;
+    padding: 40px 0;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+.view-quiz .footer .buttons-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.view-quiz .footer .buttons-wrapper button {
+    margin: 0 40px;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    padding: 13px 23px;
+    cursor: pointer;
+    background-color: rgba(94,92,236, 1) !important;
+}
+
+.view-quiz .footer .buttons-wrapper button:first-child {
+    margin: 0 40px;
+    color: white;
+    background-color: rgba(94,92,236, 1) !important;
+}
