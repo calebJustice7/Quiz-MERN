@@ -3,6 +3,7 @@ const Users = require('../models/Users');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
+const { cloudinary } = require('../config/cloudinary');
 const { loginValidator, registerValidator } = require("../validators/validators");
 
 const router = express.Router();
@@ -76,6 +77,27 @@ router.get('/:id', checkAuth, (req, res) => {
     }).catch(er => {
         res.json({ success: false, message: er.message });
     })
+})
+
+router.post('/upload-image', checkAuth, async(req, res) => {
+    try {
+        const fileStr = req.body.data;
+        const uploadedResponse = await cloudinary.uploader.upload(fileStr);
+        Users.findOne({ _id: req.body._id }).then(user => {
+            user.avatar = { url: uploadedResponse.url, publicId: uploadedResponse.public_id };
+            user.save();
+            if (user.images) {
+                user.images.push({ url: uploadedResponse.url, publicId: uploadedResponse.public_id });
+            } else {
+                user.images = [];
+                user.images.push({ url: uploadedResponse.url, publicId: uploadedResponse.public_id })
+            }
+            res.json({ success: true });
+        })
+    } catch (err) {
+        console.log(err);
+        res.json({ success: false, message: 'Something went wrong, try again.' })
+    }
 })
 
 module.exports = router;

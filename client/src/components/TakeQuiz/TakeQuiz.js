@@ -81,7 +81,7 @@ export default class TakeQuiz extends React.Component {
             quizId: this.state.quiz._id
         }).then(res => {
             if (res.data) {
-                console.log(res.data);
+                this.props.history.push('/view-results?id=' + res.data.scoreId);
             }
         })
     }

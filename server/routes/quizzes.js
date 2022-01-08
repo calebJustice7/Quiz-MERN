@@ -2,7 +2,7 @@ const express = require('express');
 const Quizzes = require('../models/Quiz');
 const checkAuth = require('../middleware/check-auth');
 const Users = require('../models/Users');
-const Scores = require('../models/Scores');
+const Score = require('../models/Scores');
 
 const router = express.Router();
 
@@ -110,5 +110,28 @@ router.post('/save-results', checkAuth, (req, res) => {
         res.status(200).json({scoreId: resp._id});
     })
 });
+
+router.get('/results/:id', checkAuth, (req, res) => {
+    if (!req.params.id) {
+        res.status(500).send("No id provided in params");
+    } else {
+        Score.findOne({_id: req.params.id}).then(data => {
+            if (!data) {
+                res.status(500).send("Error finding score");
+            } else {
+                Quizzes.findOne({_id: data.quizId}).then(quiz => {
+                    if (!quiz) {
+                        res.status(500).send("Error getting quiz");
+                    } else {
+                        res.status(200).json({score: data, quiz: quiz});
+                    }
+                })
+            }
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).send("Error finding score");
+        })
+    }
+})
 
 module.exports = router;

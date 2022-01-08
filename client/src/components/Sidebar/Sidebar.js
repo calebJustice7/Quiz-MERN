@@ -13,6 +13,15 @@ export default class Sidebar extends React.Component {
         this.unsubscribe();
     }
 
+    bgImage = () => {
+        if(store.getState().user.avatar && store.getState().user.avatar.url) {
+            return `url(${store.getState().user.avatar.url})`;
+            
+        } else {
+            return `url(https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg)`;
+        }
+    }
+
     render() {
         if (store.getState().user) {
             return (
@@ -20,7 +29,7 @@ export default class Sidebar extends React.Component {
                     <div className="header">Quiz Itt</div>
     
                     <div className="user">
-                        <div className="avatar" style={{backgroundImage: store.getState().user.avatar || `url(https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg)`}}></div>
+                        <div className="avatar" style={{backgroundImage: this.bgImage()}}></div>
                         <div className="name">{store.getState().user.firstName + ' ' + store.getState().user.lastName}</div>
                     </div>
 

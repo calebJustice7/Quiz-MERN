@@ -14,11 +14,12 @@
 }
 
 .sidebar-wrapper .user .avatar {
-    width: 7vw;
-    height: 7vw;
+    width: 9vw;
+    height: 9vw;
     background-size: cover;
     background-position: center;
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 .sidebar-wrapper .user .name {
